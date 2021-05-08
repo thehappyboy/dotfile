@@ -1,0 +1,9 @@
+[https]
+	proxy = socks5://127.0.0.1:10010
+[http]
+	proxy = socks5://127.0.0.1:10010
+[user]
+	name = thehappyboy
+	email = 27151400@qq.com
+[diff]
+    tool = delta
