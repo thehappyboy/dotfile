@@ -9,4 +9,6 @@ options:init()
 plugs:init()
 autocmds:init()
 
-vim.cmd('colorscheme deus')
+vim.cmd('packadd! everforest')
+vim.g.everforest_background = 'medium'
+vim.cmd('colorscheme everforest')

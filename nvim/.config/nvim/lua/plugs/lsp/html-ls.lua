@@ -5,5 +5,8 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 require'lspconfig'.html.setup {
     on_attach = require'plugs.lsp.settings'.common_on_attach,
-    capabilities = capabilities
+    capabilities = capabilities,
+    default_config = {
+        filetypes = {'html', 'htmldjango'}
+        }
 }

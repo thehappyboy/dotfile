@@ -86,6 +86,7 @@ wk.register({
             R = {'<Cmd>lua require("gitsigns").reset_buffer()<cr>', 'reset buffer'},
             p = {'<Cmd>lua require("gitsigns").preview_hunk()<cr>', 'preview'},
             b = {'<Cmd>lua require("gitsigns").blame_line()<cr>', 'blame'},
+            g = {'<cmd>lua require("plugs.nvim-fterm").lazygit_toggle()<cr>', 'lazygit'},
             S = {"<cmd>Telescope git_status<cr>", "Open changed file"},
             B = {"<cmd>Telescope git_branches<cr>", "Checkout branch"},
             c = {"<cmd>Telescope git_commits<cr>", "Checkout commit"},
@@ -125,15 +126,14 @@ wk.register({
             o = {'<cmd>Telescope vim_options<cr>', 'vim_options'},
             r = {'<cmd>Telescope registers<cr>', 'registers'},
             t = {'<cmd>Telescope live_grep<cr>', 'search text in project'},
-            u = {'<cmd>Telescope colorscheme<cr>', 'colorschemes'}
         },
         t = {
             name = '+toggle',
-            s = {'<cmd>Dashboard<cr>', 'Open Start Screen'},
-            c = {'<cmd>DashboardChangeColorscheme<cr>', 'Change Colorscheme'},
+            c = {'<cmd>Telescope colorscheme<cr>', 'colorschemes'},
             e = {'<cmd>NvimTreeToggle<cr>', 'Toggle File Explorer'},
             o = {'<cmd>SymbolsOutline<cr>', 'Toggle Symbols View'},
-            t = {'<cmd>ToggleTerm<cr>', 'Toggle Terminal'},
+            -- t = {'<cmd>ToggleTerm<cr>', 'Toggle Terminal'},
+            t = {'<cmd>lua require("FTerm").toggle()<cr>', 'Toggle Terminal'},
             u = {'<cmd><c-u>UndotreeToggle<cr>', 'toggle undotree'}
         },
         w = {
@@ -168,7 +168,8 @@ wk.register({
 
 api.nvim_set_keymap('n', '<F2>', ':NvimTreeToggle<cr>', {})
 api.nvim_set_keymap('n', '<F4>', ':SymbolsOutline<cr>', {})
-api.nvim_set_keymap('n', '<F5>', ':ToggleTerm<cr>', {})
+-- api.nvim_set_keymap('n', '<F5>', ':ToggleTerm<cr>', {})
+api.nvim_set_keymap('n', '<F5>', '<cmd>lua require("FTerm").toggle()<cr>', {})
 
 -- better window movement
 -- api.nvim_set_keymap('n', '<C-h>', '<C-w>h', opts)
@@ -197,7 +198,7 @@ api.nvim_set_keymap('', '<C-a>', '^', opts)
 api.nvim_set_keymap('i', '<C-e>', '<C-o>A', opts)
 api.nvim_set_keymap('', '<C-e>', '$', opts)
 -- Terminal
-api.nvim_set_keymap('t', '<ESC>', [[<C-\><C-n>]], opts)
+api.nvim_set_keymap('t', '<Esc>', [[<C-\><C-n>]], opts)
 -- Insert
 api.nvim_set_keymap('i', '<C-w>', '<C-[>diwa', opts)
 api.nvim_set_keymap('i', '<C-h>', '<BS>', opts)

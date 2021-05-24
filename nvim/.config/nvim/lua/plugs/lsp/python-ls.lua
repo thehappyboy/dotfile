@@ -19,6 +19,10 @@ require'lspconfig'.pyright.setup {
         python = {
             venvPath = '/Users/john/miniconda3/envs'
         }
+    },
+    default_config = {
+        filetypes = {'python', 'django'}
     }
+
 }
 

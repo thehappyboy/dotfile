@@ -7,3 +7,5 @@
 	email = 27151400@qq.com
 [diff]
     tool = delta
+[init]
+	defaultBranch = master

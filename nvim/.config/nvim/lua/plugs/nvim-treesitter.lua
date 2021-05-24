@@ -22,11 +22,11 @@ end
 
 
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = {'python', 'lua', 'html', 'css', 'javascript', 'bash', 'css', 'query',},
+    ensure_installed = {'python', 'json','lua', 'html', 'css', 'javascript', 'bash', 'css', 'query',},
     ignore_install = {'haskell'},
     highlight = { enable = true},
     rainbow = {enable = true, extended_mode = true},
-    indent = {enable = true},
+    indent = {enable = true, disable = {'python'}},
     context_commentstring = {enable = true},
     textobjects = {
         enable = true,

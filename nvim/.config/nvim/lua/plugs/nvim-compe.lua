@@ -1,8 +1,4 @@
-vim.g.vsnip_snippet_dir = vim.fn.stdpath("config") .. "/snippets"
 
-if not packer_plugins['vim-vsnip'].loaded then
-    vim.cmd [[packadd vim-vsnip]]
-end
 
 require('compe').setup({
     enabled = true,

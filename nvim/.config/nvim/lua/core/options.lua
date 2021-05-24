@@ -5,7 +5,7 @@ local globals = require('core.globals')
 
 
 options.g = {
-    termguicolors = true,		-- enable 24bit true color
+    termguicolors = true,			-- enable 24bit true color
     background = 'dark',
     mouse = 'nv',				-- enable mouse in normal and visual mode
     errorbells = false,
@@ -18,7 +18,7 @@ options.g = {
     backspace = 'indent,eol,start',
     fillchars = 'vert:│',
     viewoptions = 'folds,cursor,curdir,slash,unix',
-    clipboard = 'unnamedplus',		-- copy paste between vim and everything else
+    clipboard = 'unnamedplus',			-- copy paste between vim and everything else
     wildignorecase = true,
     wildmenu = true,
     wildignore = '.git,*.pyc,*.o,**/tmp/**,*.DS_Store,**/node_modules/**',
@@ -34,23 +34,23 @@ options.g = {
     ttimeout = true,
     timeoutlen = 400,
     ttimeoutlen = 400,
-    updatetime = 400,   -- Faster completion
+    updatetime = 400,  			 	-- Faster completion
     redrawtime = 500,
     ignorecase = true,
     smartcase = true,
     infercase = true,
     incsearch = true,
     wrapscan = true,
-    splitbelow = true,			-- Horizontal splits will automatically be below
-    splitright = true,			-- Vertical splits will automatically be to the right
-    showtabline = 0,			-- Hidden tabline
-    showmode = false,			-- Hidden --INSERT,NORMAL mode
-    shortmess = 'acAIF',		-- Donot pass messages such as |ins-completion-menu|
+    splitbelow = true,				-- Horizontal splits will automatically be below
+    splitright = true,				-- Vertical splits will automatically be to the right
+    showtabline = 0,				-- Hidden tabline
+    showmode = false,				-- Hidden --INSERT,NORMAL mode
+    shortmess = 'acAIF',			-- Donot pass messages such as |ins-completion-menu|
     scrolloff = 3,
     sidescrolloff = 5,
     foldlevelstart = 99,
-    pumheight = 10, -- make popup menu smaller
-    cmdwinheight = 2, -- More space for displaying messages
+    pumheight = 10, 				-- make popup menu smaller
+    cmdwinheight = 2, 				-- More space for displaying messages
     laststatus = 2,
     showbreak = '↳  ',
     completeopt = 'noselect,menuone',
@@ -62,32 +62,32 @@ options.g = {
 }
 
 options.w = {
-    foldlevel = 99,
+    foldlevel = 3,
     conceallevel = 2,
     wrap = false,				-- Display long lines as just one line
     number = true,				-- Show line number
-    relativenumber = true,		-- Show line relativenumber
-    cursorline = true,			-- Enable highlighting of the current line
+    relativenumber = true,			-- Show line relativenumber
+    cursorline = true,				-- Enable highlighting of the current line
     colorcolumn = '120',
-    signcolumn = 'yes',			-- Always show signcolumn
+    signcolumn = 'yes',				-- Always show signcolumn
     listchars = 'tab:»·,eol:↲,nbsp:+,trail:·,extends:→,precedes:←',
-    list = true,                -- display listchars
+    list = true,                		-- display listchars
 }
 
 options.b = {
     swapfile = false,
     undofile = true,
-    expandtab = true,	-- translate tabs to spaces
+    expandtab = true,				-- translate tabs to spaces
     tabstop = 4,
     softtabstop = 4,
     shiftwidth = 4,
     autoindent = true,
     smartindent = true,
-    fileencoding = 'utf-8' -- the encoding written to file
+    fileencoding = 'utf-8' 			-- the encoding written to file
 }
 
 function options:init()
-    vim.cmd([[set iskeyword+=-]]) -- treat dash seperate words as a word text object
+    vim.cmd([[set iskeyword+=-]]) 		-- treat dash seperate words as a word text object
 
     for option, value in pairs(self.g) do
         vim.o[option] = value

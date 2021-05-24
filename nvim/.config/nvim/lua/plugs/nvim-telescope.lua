@@ -4,8 +4,8 @@ if not packer_plugins['plenary.nvim'].loaded then
 end
 
 if not packer_plugins['telescope-dap.nvim'].loaded then
-    vim.cmd [[packadd telescope-dap.nvim]]
     vim.cmd [[packadd nvim-dap]]
+    vim.cmd [[packadd telescope-dap.nvim]]
 end
 
 
